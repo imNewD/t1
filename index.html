@@ -1,272 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Albania - Discover the Beauty of the Balkans</title>
     <style>
-      body {
-        font-family: "Arial", sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #2c3e50;
-        background: linear-gradient(
-          to bottom,
-          #d35400,
-          #c0392b,
-          #3498db,
-          #2980b9
-        );
-        transition: background 0.5s;
-      }
+        /* Common styles for both PC and mobile */
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            transition: background 0.5s;
+        }
 
-      header {
-        background-color: #ff8c00;
-        padding: 15px;
-        text-align: center;
-        color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      }
+        header {
+            background-color: #ff8c00;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
 
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        background-color: #ffa07a;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #ffa07a;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-      nav a {
-        color: #2c3e50;
-        padding: 10px;
-        text-decoration: none;
-        margin: 5px;
-        transition: color 0.3s;
-      }
+        nav a {
+            color: #2c3e50;
+            padding: 10px;
+            text-decoration: none;
+            margin: 5px;
+            transition: color 0.3s;
+        }
 
-      nav a:hover {
-        color: #ff8c00;
-      }
+        nav a:hover {
+            color: #ff8c00;
+        }
 
-      section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        text-align: left;
-        margin: 10px;
-        border-radius: 20px;
-        background-color: #fae5d3;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        position: relative;
-      }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: left;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
 
-      h2 {
-        color: #2c3e50;
-        margin-bottom: 10px;
-      }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
 
-      section img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        border-radius: 10px;
-        margin: 10px 0;
-      }
+        section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
 
-      p {
-        color: #2c3e50;
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 10px;
-      }
+        p {
+            color: #2c3e50;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
 
-      footer {
-        background-color: #ff8c00;
-        color: #fff;
-        text-align: center;
-        padding: 15px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-      }
+        footer {
+            background-color: #ff8c00;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        }
 
-      .scroll-to-top {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        background-color: #3498db;
-        color: #fff;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        display: none;
-      }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none;
+        }
 
-      .scroll-to-top:hover {
-        background-color: #2980b9;
-      }
+        .scroll-to-top:hover {
+            background-color: #2980b9;
+        }
+
+        /* PC-specific styles */
+        @media (min-width: 600px) {
+            body {
+                background: linear-gradient(to bottom, #d35400, #c0392b, #3498db, #2980b9);
+            }
+
+            section {
+                display: flex;
+                align-items: center;
+                background-color: #fae5d3;
+            }
+
+            section:nth-child(even) {
+                flex-direction: row-reverse;
+                background-color: #d5e4f3;
+            }
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 599px) {
+            body {
+                background: linear-gradient(to bottom, #3498db, #2980b9);
+            }
+
+            section {
+                background-color: #fae5d3;
+                margin: 5px;
+            }
+
+            section:nth-child(even) {
+                background-color: #d5e4f3;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-      <h1>Welcome to Explore Albania</h1>
-      <h2>Discover the Beauty of the Balkans</h2>
+        <h1>Welcome to Explore Albania</h1>
+        <h2>Discover the Beauty of the Balkans</h2>
     </header>
 
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Destinations</a>
-      <a href="#">Why Choose Albania</a>
-      <a href="#">Plan Your Trip</a>
-      <a href="#">Contact Us</a>
-      <a href="#">About Us</a>
-      <a href="#">Blog</a>
+        <a href="#">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">Why Choose Albania</a>
+        <a href="#">Plan Your Trip</a>
+        <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
     </nav>
 
     <section>
-      <img src="https://via.placeholder.com/300" alt="Northern Albania" />
-      <div>
-        <h2>Explore Northern Albania</h2>
-        <p>
-          Explore the breathtaking beauty of Northern Albania, where vibrant
-          cities like Tirana and Shkodra coexist with picturesque mountain
-          villages such as Theth and Valbona. Tirana, the capital, is a vibrant
-          city with a mix of Ottoman, Italian, and communist-era architecture.
-          Shkodra, located near Lake Shkodra, is known for its medieval history
-          and stunning landscapes.
-        </p>
-        <p>
-          Theth and Valbona, nestled in the Albanian Alps, offer a tranquil
-          retreat with pristine nature, traditional stone houses, and warm
-          hospitality. Visit Theth to explore the Theth National Park and the
-          iconic Blue Eye waterfall. In Valbona, embark on a hike through
-          Valbona Valley, surrounded by high peaks and dense forests.
-        </p>
-        <p>
-          Important Dates: <br />
-          - Tirana Foundation Day: November 17 <br />
-          - Shkodra Carnival: March 5
-        </p>
-      </div>
+        <img src="https://via.placeholder.com/300" alt="Northern Albania" />
+        <div>
+            <h2>Explore Northern Albania</h2>
+            <p>
+                Explore the breathtaking beauty of Northern Albania, where vibrant
+                cities like Tirana and Shkodra coexist with picturesque mountain
+                villages such as Theth and Valbona. Tirana, the capital, is a vibrant
+                city with a mix of Ottoman, Italian, and communist-era architecture.
+                Shkodra, located near Lake Shkodra, is known for its medieval history
+                and stunning landscapes.
+            </p>
+            <p>
+                Theth and Valbona, nestled in the Albanian Alps, offer a tranquil
+                retreat with pristine nature, traditional stone houses, and warm
+                hospitality. Visit Theth to explore the Theth National Park and the
+                iconic Blue Eye waterfall. In Valbona, embark on a hike through
+                Valbona Valley, surrounded by high peaks and dense forests.
+            </p>
+            <p>
+                Important Dates: <br />
+                - Tirana Foundation Day: November 17 <br />
+                - Shkodra Carnival: March 5
+            </p>
+        </div>
     </section>
 
     <section>
-      <div>
-        <h2>Discover Middle Albania</h2>
-        <p>
-          Discover the rich history of Middle Albania, where cities like Durres,
-          Kruja, and Berat showcase the country's cultural heritage. Durres,
-          situated on the Adriatic Sea, is home to ancient ruins, including the
-          Roman amphitheater and Venetian Tower. Kruja, with its historic
-          castle, played a crucial role in Albanian history and is known for its
-          medieval architecture.
-        </p>
-        <p>
-          Berat, a UNESCO World Heritage Site, is often referred to as the "City
-          of a Thousand Windows" due to its well-preserved Ottoman architecture.
-          Explore the medieval castle, Onufri Museum, and the charming streets
-          of Mangalem and Gorica. Middle Albania offers a journey through time,
-          blending the past with the present.
-        </p>
-        <p>
-          Important Dates: <br />
-          - Durres Day: October 29 <br />
-          - Kruja Carnival: May 20 <br />
-          - Berat Day: October 10
-        </p>
-      </div>
-      <img src="https://via.placeholder.com/300" alt="Middle Albania" />
+        <div>
+            <h2>Discover Middle Albania</h2>
+            <p>
+                Discover the rich history of Middle Albania, where cities like Durres,
+                Kruja, and Berat showcase the country's cultural heritage. Durres,
+                situated on the Adriatic Sea, is home to ancient ruins, including the
+                Roman amphitheater and Venetian Tower. Kruja, with its historic
+                castle, played a crucial role in Albanian history and is known for its
+                medieval architecture.
+            </p>
+            <p>
+                Berat, a UNESCO World Heritage Site, is often referred to as the "City
+                of a Thousand Windows" due to its well-preserved Ottoman architecture.
+                Explore the medieval castle, Onufri Museum, and the charming streets
+                of Mangalem and Gorica. Middle Albania offers a journey through time,
+                blending the past with the present.
+            </p>
+            <p>
+                Important Dates: <br />
+                - Durres Day: October 29 <br />
+                - Kruja Carnival: May 20 <br />
+                - Berat Day: October 10
+            </p>
+        </div>
+        <img src="https://via.placeholder.com/300" alt="Middle Albania" />
     </section>
 
     <section>
-      <img src="https://via.placeholder.com/300" alt="South Albania" />
-      <div>
-        <h2>Experience South Albania</h2>
-        <p>
-          Experience the coastal charm and archaeological wonders of South
-          Albania. Cities like Vlora, Saranda, and Gjirokastra offer a perfect
-          blend of history and natural beauty. Vlora, overlooking the Adriatic
-          Sea, is known for its Independence Day celebrations and beautiful
-          beaches.
-        </p>
-        <p>
-          Saranda, located on the Ionian Sea, is a gateway to the ancient ruins
-          of Butrint, a UNESCO World Heritage Site. Gjirokastra, with its
-          well-preserved Ottoman architecture, invites you to explore its
-          historic sites, including Gjirokastra Castle and the Old Bazaar.
-        </p>
-        <p>
-          Whether you relax on the beaches of Ksamil, explore the ancient city
-          of Butrint, or wander through the cobblestone streets of Gjirokastra,
-          South Albania offers a diverse and captivating experience.
-        </p>
-        <p>
-          Important Dates: <br />
-          - Vlora Independence Day: November 28 <br />
-          - Saranda Summer Festival: July 15 <br />
-          - Gjirokastra Old Bazaar Day: September 10
-        </p>
-      </div>
+        <img src="https://via.placeholder.com/300" alt="South Albania" />
+        <div>
+            <h2>Experience South Albania</h2>
+            <p>
+                Experience the coastal charm and archaeological wonders of South
+                Albania. Cities like Vlora, Saranda, and Gjirokastra offer a perfect
+                blend of history and natural beauty. Vlora, overlooking the Adriatic
+                Sea, is known for its Independence Day celebrations and beautiful
+                beaches.
+            </p>
+            <p>
+                Saranda, located on the Ionian Sea, is a gateway to the ancient ruins
+                of Butrint, a UNESCO World Heritage Site. Gjirokastra, with its
+                well-preserved Ottoman architecture, invites you to explore its
+                historic sites, including Gjirokastra Castle and the Old Bazaar.
+            </p>
+            <p>
+                Whether you relax on the beaches of Ksamil, explore the ancient city
+                of Butrint, or wander through the cobblestone streets of Gjirokastra,
+                South Albania offers a diverse and captivating experience.
+            </p>
+            <p>
+                Important Dates: <br />
+                - Vlora Independence Day: November 28 <br />
+                - Saranda Summer Festival: July 15 <br />
+                - Gjirokastra Old Bazaar Day: September 10
+            </p>
+        </div>
     </section>
 
     <footer>
-      <p>&copy; 2023 Explore Albania | Contact: info@explorealbania.com</p>
+        <p>&copy; 2023 Explore Albania | Contact: info@explorealbania.com</p>
     </footer>
 
     <button class="scroll-to-top" onclick="scrollToTop()">Scroll to Top</button>
 
     <script>
-      document.addEventListener("scroll", function () {
-        const body = document.body;
-        const scrollTop = document.documentElement.scrollTop || body.scrollTop;
-        const scrollHeight =
-          document.documentElement.scrollHeight || body.scrollHeight;
-        const windowHeight =
-          document.documentElement.clientHeight || body.clientHeight;
-        const scrollPercentage =
-          (scrollTop / (scrollHeight - windowHeight)) * 100;
+        document.addEventListener("scroll", function () {
+            const body = document.body;
+            const scrollTop = document.documentElement.scrollTop || body.scrollTop;
+            const scrollHeight =
+                document.documentElement.scrollHeight || body.scrollHeight;
+            const windowHeight =
+                document.documentElement.clientHeight || body.clientHeight;
+            const scrollPercentage =
+                (scrollTop / (scrollHeight - windowHeight)) * 100;
 
-        const colorStart = [211, 84, 0]; // Dark Orange-Red
-        const colorMiddle = [196, 57, 43]; // Dark Red
-        const colorEnd = [52, 152, 219]; // Light Blue
-        let color;
+            const colorStart = [211, 84, 0]; // Dark Orange-Red
+            const colorMiddle = [196, 57, 43]; // Dark Red
+            const colorEnd = [52, 152, 219]; // Light Blue
+            let color;
 
-        if (scrollPercentage < 50) {
-          color = colorStart.map((channel, i) =>
-            Math.round(
-              channel + (colorMiddle[i] - channel) * (scrollPercentage / 50)
-            )
-          );
-        } else {
-          color = colorMiddle.map((channel, i) =>
-            Math.round(
-              channel + (colorEnd[i] - channel) * ((scrollPercentage - 50) / 50)
-            )
-          );
+            if (scrollPercentage < 50) {
+                color = colorStart.map((channel, i) =>
+                    Math.round(
+                        channel + (colorMiddle[i] - channel) * (scrollPercentage / 50)
+                    )
+                );
+            } else {
+                color = colorMiddle.map((channel, i) =>
+                    Math.round(
+                        channel + (colorEnd[i] - channel) * ((scrollPercentage - 50) / 50)
+                    )
+                );
+            }
+
+            document.body.style.background = `linear-gradient(to bottom, rgb(${color.join(
+                ","
+            )}) 0%, rgb(${colorEnd.join(",")}) 100%)`;
+
+            // Show/hide "Scroll to Top" button
+            const scrollButton = document.querySelector(".scroll-to-top");
+            if (scrollPercentage > 20) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
-        document.body.style.background = `linear-gradient(to bottom, rgb(${color.join(
-          ","
-        )}) 0%, rgb(${colorEnd.join(",")}) 100%)`;
+        // JavaScript to dynamically load content based on device type
+        window.addEventListener("DOMContentLoaded", function () {
+            const isMobile = window.matchMedia("only screen and (max-width: 599px)").matches;
 
-        // Show/hide "Scroll to Top" button
-        const scrollButton = document.querySelector(".scroll-to-top");
-        if (scrollPercentage > 20) {
-          scrollButton.style.display = "block";
-        } else {
-          scrollButton.style.display = "none";
-        }
-      });
-
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+            if (isMobile) {
+                // Load mobile content
+                // You can use AJAX or other methods to load content dynamically
+                console.log("Loading mobile content...");
+            } else {
+                // Load PC content
+                // You can use AJAX or other methods to load content dynamically
+                console.log("Loading PC content...");
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
